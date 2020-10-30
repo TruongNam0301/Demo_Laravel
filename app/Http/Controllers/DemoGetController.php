@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\products;
+use App\Models\types;
 use Illuminate\Http\Request;
 
 class DemoGetController extends Controller
@@ -27,8 +28,9 @@ class DemoGetController extends Controller
      */
     public function create()
     {
-       $action = 'create';
-        return view('productForm',['action'=>$action]);
+        $types = types::all();
+        $action = 'create';
+        return view('productForm',['action'=>$action,'types'=>$types]);
     }
 
     /**
@@ -78,10 +80,11 @@ class DemoGetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $types = types::all();
         $product = products::find($id);
         $action = 'update';
-        return view('productForm',['product'=>$product,'action'=>$action]);
+        return view('productForm',['product'=>$product,'action'=>$action,'types'=>$types]);
     }
 
     /**
@@ -112,6 +115,6 @@ class DemoGetController extends Controller
     {
         $product = products::find($id);
         $product->delete();
-         return redirect()->back();
+        return redirect()->back();
     }
 }
