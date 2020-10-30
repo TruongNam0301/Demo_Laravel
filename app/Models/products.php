@@ -33,7 +33,7 @@ class products extends Model
             $arr= ['jpg','png','jpeg'];
             if (in_array($extension,$arr)){
                 $fileNameToStore = time().'_'.$filename;
-                $file->move('../resources/image', $fileNameToStore);
+                $file->move('image', $fileNameToStore);
             }
             $this->image =  $fileNameToStore;
         }

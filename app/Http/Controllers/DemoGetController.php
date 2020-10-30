@@ -48,7 +48,7 @@ class DemoGetController extends Controller
             $arr= ['jpg','png','jpeg'];
             if (in_array($extension,$arr)){
                 $fileNameToStore = time().'_'.$filename;
-                $file->move('../resources/image', $fileNameToStore);
+                $file->move('image', $fileNameToStore);
             }
         }
         $product = new products();

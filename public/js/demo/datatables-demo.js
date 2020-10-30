@@ -6,5 +6,5 @@ $(document).ready(function() {
   "pageLength": 5
     } );
   $('#dataTable').DataTable();
-   $("#dataTable_length").append("<a href='http://localhost/Demo/public/productsAdmin/create' class='btn btn-success'>ADD New</a>" );
+   $("#dataTable_length").append("<a href='http://127.0.0.1:8000/productsAdmin/create' class='btn btn-success'>ADD New</a>" );
 });
